@@ -23,7 +23,5 @@ module.exports = function () {
                 filename: "style.css"
             })
         ]
-
-
     }
 };

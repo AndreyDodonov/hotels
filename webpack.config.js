@@ -9,18 +9,15 @@ const devserver = require('./webpack/devserver');
 const sass = require('./webpack/sass');
 const css = require('./webpack/css');
 const extractCSS = require('./webpack/css.extract');
-const uglifyJS = require('./webpack/js.uglify');
+// const uglifyJS = require('./webpack/js.uglify');
 const images = require('./webpack/images');
 const fonts = require('./webpack/fonts');
 
 const PATHS = {
+    // assets ?
     source: path.join(__dirname, 'source'),
-    build: path.join(__dirname, 'build'),
-    assets: 'assets/'
+    build: path.join(__dirname, 'build')
 };
-
-const PAGES_DIR = `${PATHS.source}`;
-const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'));
 
 const common = merge([
     {
@@ -35,11 +32,10 @@ const common = merge([
         },
 
         plugins: [
-            // Automatic creation any html pages from .pug
-            ...PAGES.map(page => new HtmlWebpackPlugin({
-                template: `${PAGES_DIR}/${page}`,
-                filename: `./${page.replace(/\.pug/, '.html')}`
-            })),
+            new HtmlWebpackPlugin({
+                filename: "index.html",
+                template: PATHS.source + "/index.pug"
+            }),
             new webpack.ProvidePlugin({
                 $: "jquery",
                 jQuery: "jquery",
@@ -58,7 +54,7 @@ module.exports = function (env) {
         return merge([
             common,
             extractCSS(),
-            uglifyJS()
+           // uglifyJS()
         ]);
     }
     if (env === 'development') {
@@ -70,3 +66,4 @@ module.exports = function (env) {
         ])
     }
 };
+

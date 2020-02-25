@@ -1,8 +1,16 @@
+@import "fonts";
+@import "colors";
+
+@import "../../templates/footer/footer";
 
 p {
-  color: red;
+  color: $dark-shade25;
 }
 
 .footer {
   margin-top: 100px;
+}
+
+.test-font {
+  font-family: Montserrat, serif;
 }

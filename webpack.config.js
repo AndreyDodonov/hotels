@@ -35,7 +35,7 @@ const common = merge([
         },
 
         plugins: [
-            // Automatic creation any html pages
+            // Automatic creation any html pages from .pug
             ...PAGES.map(page => new HtmlWebpackPlugin({
                 template: `${PAGES_DIR}/${page}`,
                 filename: `./${page.replace(/\.pug/, '.html')}`
@@ -45,9 +45,6 @@ const common = merge([
                 jQuery: "jquery",
                 "window.jQuery": "jquery",
                 "window.$": "jquery"
-            }),
-            new webpack.ProvidePlugin({
-                GoogleMapsLoader: 'google-maps'
             })
         ]
     },

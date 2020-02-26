@@ -8,10 +8,7 @@ module.exports = function() {
 	            }, {
 	                loader: "css-loader"
 	            }, {
-	                loader: "sass-loader",
-	                options: {
-	                    includePaths: ["absolute/path/a", "absolute/path/b"]
-	                }
+	                loader: "sass-loader"
 	            }]
 	        }]
 	    }

@@ -1,5 +1,6 @@
 @import "fonts";
 @import "colors";
+@import "text";
 
 @import "../../templates/footer/footer";
 
@@ -12,7 +13,7 @@ p {
 }
 
 .test-font {
-  font-family: Montserrat, serif;
+  @include text__h1;
 }
 
 .devTest {

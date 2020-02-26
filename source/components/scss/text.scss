@@ -1,0 +1,17 @@
+$main-font: Montserrat, Arial, sans-serif;
+$sec-font:Quicksand, Arial, sans-serif;
+
+@mixin text($family, $size, $weight, $color) {
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin text__h1 {
+  @include text($sec-font, 24px, bold, $dark-shade)
+}
+
+@mixin text__h2 {
+  @include text()
+}

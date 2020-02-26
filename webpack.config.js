@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const fs = require('fs');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 const pug = require('./webpack/pug');
 const devserver = require('./webpack/devserver');
@@ -49,7 +50,8 @@ const pages = walk(pagesLocation)
 // end
 
 const common = merge([
-    {
+    {   context: __dirname,
+
         entry: {
             'bundle': PATHS.source + '/bundle/bundle.js',
         },
@@ -61,12 +63,18 @@ const common = merge([
         },
 
         plugins: [
+            new HtmlWebpackPlugin({
+                filename: "index.html",
+                template: PATHS.source + "/index.pug"
+            }),
+            new CleanWebpackPlugin(),
             new webpack.ProvidePlugin({
                 $: "jquery",
                 jQuery: "jquery",
                 "window.jQuery": "jquery",
                 "window.$": "jquery"
-            })
+            }),
+
         ].concat(pages.map(page => new HtmlWebpackPlugin(page))),
     },
     pug(),

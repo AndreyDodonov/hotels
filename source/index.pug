@@ -1,15 +1,21 @@
-extends ./templates/base
+extends templates/base
 
 block title
 	title Index
 
-	include ./templates/header
+	include templates/header
 
 block main
 		p.hi  Цсс тож работает
 		p.test-font Тестируем шрифты
 		p.devTest This one is the sub-section or
-			|widget title а русский?
-		a(href='./pages/colorsTypes/colorsType.html')
+			| widget title а русский?
+
+		ul
+			li
+				a(href="colorsTypes.html") Colors & Type
+			li
+				a(href="form-elements.html") Form Elements
+
 		include templates/footer/footer
 

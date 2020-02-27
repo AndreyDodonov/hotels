@@ -1,6 +1,6 @@
 @import "../../components/scss/text";
 @import "../../components/scss/colors";
 
-.testColorTypes {
-  @include text__h1;
+.header {
+  background-color: $dark-shade25;
 }

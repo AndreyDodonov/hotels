@@ -1,21 +1,24 @@
 extends templates/base
 
-block title
-	title Index
+block variables
+	- var pageTitle = 'navigation hotels'
 
-	include templates/header
 
 block main
+		include templates/header/header
 		p.hi  Цсс тож работает
 		p.test-font Тестируем шрифты
-		p.devTest This one is the sub-section or
-			| widget title а русский?
+		p.devTest Navigation
 
 		ul
 			li
 				a(href="colorsTypes.html") Colors & Type
 			li
-				a(href="form-elements.html") Form Elements
+				a(href="formElements.html") Form Elements
+			li
+				a(href="headersFooters.html") Headers & footers
+			li
+				a(href="cards.html") cards
 
 		include templates/footer/footer
 

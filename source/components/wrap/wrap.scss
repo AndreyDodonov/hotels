@@ -1,0 +1,13 @@
+@import "../../components/scss/colors";
+
+.uikit-wrap {
+  width: 1440px;
+  background-color:$white;
+  &_gray {
+    background-color: $main-background;
+  }
+  &__logo-icon {
+    position: absolute;
+    margin: 20px 0 0 20px;
+  }
+}

@@ -1,0 +1,37 @@
+@import "../../components/scss/colors";
+
+.logo-icon {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+
+  &_colored {
+    width: 40px;
+    height: 40px;
+    position: unset;
+  }
+}
+
+#left-path {
+  fill: $dark-shade25;
+
+  &_colored {
+    fill: url(#left-gradient);
+  }
+}
+
+#right-path {
+  fill: $dark-shade25;
+
+  &_colored {
+    fill: url(#right-gradient);
+  }
+}
+
+#circle-path {
+  fill: $dark-shade25;
+
+  &_colored {
+    fill: url(#circle-gradient);
+  }
+}

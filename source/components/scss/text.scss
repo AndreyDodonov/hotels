@@ -13,5 +13,15 @@ $sec-font:Quicksand, Arial, sans-serif;
 }
 
 @mixin text__h2 {
-  @include text()
+  @include text($sec-font, 19px, 700, $dark-shade)
+}
+
+@mixin text__h3 {
+  @include text($main-font, 12px, 700, $dark-shade);
+  /* line-height: 15px; */
+}
+
+@mixin body-text {
+  @include text($main-font, 14px, 400, $dark-shade75);
+  /* line-height: 24px; */
 }
